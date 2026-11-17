@@ -23,6 +23,7 @@ Sophomore engineering project (ISS296) at MedTech – South Mediterranean Univer
 - Manual edit of readings as a fallback when a sensor misbehaves
 - Login-protected admin interface
 - Fill-level threshold alerts (90 %)
+- 3D prototype of the bin designed in **SolidWorks**
 
 ## Hardware
 
@@ -66,7 +67,7 @@ On the Raspberry Pi: `python raspberry-pi/sorting_controller.py` (requires `RPi.
 
 ## Tech stack
 
-Python · Flask · MySQL · HTML/CSS/JS · Chart.js · Matplotlib · Raspberry Pi · RPi.GPIO
+Python · Flask · MySQL · HTML/CSS/JS · Chart.js · Matplotlib · Raspberry Pi · RPi.GPIO · SolidWorks
 
 ## Team
 
