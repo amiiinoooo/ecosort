@@ -1,0 +1,31 @@
+#edit.html
+{% extends 'base.html' %}
+
+{% block title %}Edit Bin{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">Edit Bin</h2>
+
+<form method="POST" action="/edit/{{ bin[0] }}">
+    <div class="mb-3">
+        <label for="name" class="form-label">Bin Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{ bin[1] }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="level_percentage" class="form-label">Level Percentage</label>
+        <input type="number" class="form-control" id="level_percentage" name="level_percentage" value="{{ bin[2] }}" required max="100">
+    </div>
+
+    <div class="mb-3">
+        <label for="weight" class="form-label">Weight (kg)</label>
+        <input type="number" class="form-control" id="weight" name="weight" value="{{ bin[3] }}" required step="0.01">
+    </div>
+    
+
+    <input type="hidden" name="updated_at" value="{{ current_time }}">
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+{% endblock %}
+

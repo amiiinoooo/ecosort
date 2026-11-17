@@ -1,0 +1,58 @@
+#dashboard.html
+{% extends 'base.html' %}
+
+{% block title %}SmartBin Dashboard{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">SmartBin Dashboard</h2>
+
+<p class="text-center"><strong>Location:</strong> {{ bin_location }}</p>
+<p class="text-center"><strong>Total Waste:</strong> {{ total_weight }} kg | <strong>Alerts:</strong> {{ alert_count }}</p>
+
+<div class="row">
+    {% for c in compartments %}
+        {% if c.name != 'Plastic' %}
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ c.name }}</h5>
+                    <p><strong>Weight:</strong> {{ c.weight }} kg</p>
+                    <p><strong>Level:</strong> {{ c.level_percentage }}%</p>
+
+                    <!-- Progress Bar -->
+                    <div class="progress mb-3">
+                        <div class="progress-bar 
+                            {% if c.level_percentage >= 80 %}
+                                bg-danger
+                            {% elif c.level_percentage >= 50 %}
+                                bg-warning
+                            {% else %}
+                                bg-success
+                            {% endif %}"
+                            role="progressbar"
+                            style="width: {{ c.level_percentage }}%;"
+                            aria-valuenow="{{ c.level_percentage }}"
+                            aria-valuemin="0" aria-valuemax="100">
+                            {{ c.level_percentage }}%
+                        </div>
+                    </div>
+
+                    <!-- Alert for Over 80% -->
+                    {% if c.level_percentage >= 80 %}
+                    <div class="alert alert-danger d-flex align-items-center mt-3" role="alert">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        <div><strong>Warning:</strong> {{ c.name }} is more than 80% full!</div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Edit Button -->
+                    <a href="/edit/{{ c.id }}" class="btn btn-primary mt-3">Edit</a>
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
