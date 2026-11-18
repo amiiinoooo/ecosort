@@ -48,7 +48,7 @@ Sophomore engineering project (ISS296) at MedTech – South Mediterranean Univer
 web/                 Flask back-end + HTML templates (dashboard, history, login, edit)
 raspberry-pi/        Sensor reading, classification and servo control scripts
 hardware/            Circuit diagram, component list and build photos
-docs/                Poster and final report
+docs/                Slides, poster and final report
 ```
 
 ## Run the web dashboard
