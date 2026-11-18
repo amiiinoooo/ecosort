@@ -73,4 +73,8 @@ Python · Flask · MySQL · HTML/CSS/JS · Chart.js · Matplotlib · Raspberry P
 
 Amine Ben Nasrallah · Adem Arroum · Ahmed Amine Zgolli · Yasmine Sahraoui. Advisor: Yassine Chaouch.
 
-📄 Full details in the [final report](docs/final-report.pdf).
+## Slides & reports
+
+- 📊 [Presentation slides](docs/EcoSort.pdf)
+- 🖼️ [Project poster](docs/poster.pdf)
+- 📄 [Final report](docs/final-report.pdf)
